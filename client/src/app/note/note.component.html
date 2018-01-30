@@ -1,0 +1,10 @@
+<app-user-logout></app-user-logout>
+<button
+    (click)="newquest()"
+>New Questions!    
+</button>
+<p>
+  note works!
+</p>
+
+<p *ngFor="let quest of questions">Questions: {{ quest.content }}</p>

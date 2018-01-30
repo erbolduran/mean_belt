@@ -1,0 +1,33 @@
+<button
+    (click)="home()"
+>Home    
+</button>
+
+<div 
+    class="question-new-div"
+>
+    <form 
+      (submit)="onSubmit(); createForm.resetForm()"
+      #createForm="ngForm"
+    >
+      <label>Question:</label>
+      <input 
+          type="text" 
+          name="question"
+          required
+          minlength="3"
+          [(ngModel)]="question.content"
+          #question1="ngModel"
+      />
+      <small
+          class="errors"
+          [hidden]="question1.valid || (question1.untouched && !createForm.submitted)"
+      >Question is required (Minny length 3).
+      </small>
+      <button 
+          class="question-new-submit"
+          [disabled]="!createForm.valid" 
+          type="submit">Submit</button>
+    </form>
+
+</div>
